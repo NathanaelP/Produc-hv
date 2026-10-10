@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Produce &amp; HV</title>
+  <meta name="description" content="Your daily produce and HV prep counts. Saved on this device, ready offline.">
+  <meta name="theme-color" content="#f6f3ec">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Produce & HV">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main class="sheet">
+    <header class="chrome" id="chrome">
+      <div class="heading">
+        <div><h1>Produce &amp; HV</h1><p id="summary" role="status">Opening your sheet…</p></div>
+        <label class="date-hit"><span id="date-label">Today</span><input id="date" type="date" aria-label="Count date" disabled></label>
+      </div>
+      <div class="actions">
+        <button class="btn" id="copy" disabled>Copy</button>
+        <button class="btn" id="past" disabled>Past</button>
+        <button class="btn" id="new" disabled>New</button>
+      </div>
+      <nav class="chips" id="chips" aria-label="Categories and filters"></nav>
+    </header>
+    <div id="storage-error" class="notice" role="alert" hidden></div>
+    <div id="sections"></div>
+    <footer>
+      <p id="item-total"></p>
+      <p>Numbers stay on this device.</p>
+      <p id="offline-status" role="status">Preparing offline access…</p>
+      <button class="text-btn" id="tools" disabled>Backup, export &amp; install</button>
+    </footer>
+    <noscript><p class="notice">Enable JavaScript to enter and save counts.</p></noscript>
+  </main>
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-heading"><h2 id="dialog-title"></h2><button id="close-dialog" class="step" aria-label="Close dialog">×</button></div>
+    <div id="dialog-body"></div>
+  </dialog>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>
